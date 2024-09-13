@@ -1,18 +1,20 @@
 ---
-namespace: infra
-name: platform_configuration
-version: 1.0.0
-readme: README.md
 authors:
   - Sean Sullivan <@sean-m-sullivan>
   - Martin Slemr <@mslemr>
   - Platform Services Engineering
+dependencies: {}
 description: A collection of roles to manage Ansible Automation Platform
+documentation: https://github.com/redhat-cop/ah_configuration/blob/master/README.md
 license:
   - GPL-3.0-only
+namespace: {{ collection_namespace }}
+name: {{ collection_name }}
+version: {{ collection_version }}
+readme: README.md
+repository: {{ collection_repo }}
+issues: {{ collection_repo }}/issues
 tags: [infrastructure]
-repository: https://github.com/redhat-cop/infra.platform_configuration
-issues: https://github.com/redhat-cop/infra.platform_configuration/issues
 build_ignore:
   - galaxy.yml.j2
   - release.yml

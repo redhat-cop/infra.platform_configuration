@@ -5,10 +5,10 @@
 # exclude_paths:
 #  - roles/master_role_example/
 exclude_paths:
-  - '.github/'
-  - 'roles/master_role_example/'
-  - 'changelogs/'
-  - 'tests/templated_role_example'
+  - .github/
+  - roles/master_role_example/
+  - changelogs/
+  - tests/templated_role_example
 parseable: true
 use_default_rules: true
 # https://github.com/ansible/ansible-lint/issues/808
@@ -19,9 +19,9 @@ skip_list:
   #   so a FQCN cannot be used in module names
   - fqcn[action]
   - fqcn[keyword]
-  - meta-runtime  # This collection with the appropriate awx.awx or ansible.controller still works with older ansible.
+  - meta-runtime # This collection with the appropriate awx.awx or ansible.controller still works with older ansible.
   - role-name[path]
-  - sanity[cannot-ignore]  # We're only ignoring sanity rules when we have to
+  - sanity[cannot-ignore] # We're only ignoring sanity rules when we have to
   - var-naming[no-role-prefix]
 kinds:
   - playbooks: "**/examples/templates/*.{yml,yaml}"
@@ -33,4 +33,20 @@ kinds:
   - vars: "**/examples/configs_export_model/*.yml"
   - vars: "**/examples/vars/*.yml"
   - vars: "**/roles/**/tests/configs/*.yml"
+mock_modules:
+  - ansible.gateway_configuration.route
+  - ansible.gateway_configuration.service_key
+  - ansible.gateway_configuration.settings
+  - ansible.gateway_configuration.team
+  - ansible.gateway_configuration.service_cluster
+  - ansible.gateway_configuration.role_user_assignment
+  - ansible.gateway_configuration.application
+  - ansible.gateway_configuration.organization
+  - ansible.gateway_configuration.route
+  - ansible.gateway_configuration.service
+  - ansible.gateway_configuration.authenticator_map
+  - ansible.gateway_configuration.service_node
+  - ansible.gateway_configuration.http_port
+  - ansible.gateway_configuration.authenticator
+  - ansible.gateway_configuration.user
 ...

@@ -1,20 +1,20 @@
 ---
-- name: "Service Nodes | Configuration"  # noqa fqcn[action-core]
+- name: Service Nodes | Configuration # noqa fqcn[action-core]
   ansible.gateway_configuration.service_node:
-    name:                     "{{ __gateway_service_nodes_item.name | mandatory }}"
-    new_name:                 "{{ __gateway_service_nodes_item.new_name | default(omit) }}"
-    address:                  "{{ __gateway_service_nodes_item.address | default(omit) }}"
-    service_cluster:          "{{ __gateway_service_nodes_item.service_cluster | default(omit) }}"
-    tags:                     "{{ __gateway_service_nodes_item.tags | default(omit) }}"
-    state:                    "{{ __gateway_service_nodes_item.state | default(gateway_state | default(omit, true)) }}"
+    name: "{{ __gateway_service_nodes_item.name | mandatory }}"
+    new_name: "{{ __gateway_service_nodes_item.new_name | default(omit) }}"
+    address: "{{ __gateway_service_nodes_item.address | default(omit) }}"
+    service_cluster: "{{ __gateway_service_nodes_item.service_cluster | default(omit) }}"
+    tags: "{{ __gateway_service_nodes_item.tags | default(omit) }}"
+    state: "{{ __gateway_service_nodes_item.state | default(gateway_state | default(omit, true)) }}"
 
     # Role Standard Options
-    gateway_hostname:         "{{ gateway_hostname | default(omit, true) }}"
-    gateway_username:         "{{ gateway_username | default(omit, true) }}"
-    gateway_password:         "{{ gateway_password | default(omit, true) }}"
-    gateway_token:            "{{ gateway_oauthtoken | default(omit, true) }}"
-    gateway_request_timeout:  "{{ gateway_request_timeout | default(omit, 10) }}"
-    gateway_validate_certs:   "{{ gateway_validate_certs | default(omit) }}"
+    gateway_hostname: "{{ gateway_hostname | default(omit, true) }}"
+    gateway_username: "{{ gateway_username | default(omit, true) }}"
+    gateway_password: "{{ gateway_password | default(omit, true) }}"
+    gateway_token: "{{ gateway_oauthtoken | default(omit, true) }}"
+    gateway_request_timeout: "{{ gateway_request_timeout | default(omit, 10) }}"
+    gateway_validate_certs: "{{ gateway_validate_certs | default(omit) }}"
   loop: "{{ service_nodes if service_nodes is defined else gateway_service_nodes }}"
   loop_control:
     loop_var: __gateway_service_nodes_item
@@ -24,9 +24,9 @@
   register: __gateway_service_nodes_job_async
   changed_when: not __gateway_service_nodes_job_async.changed
   vars:
-    ansible_async_dir: '{{ gateway_configuration_async_dir }}'
+    ansible_async_dir: "{{ gateway_configuration_async_dir }}"
 
-- name: "Service Nodes | Wait for finish the configuration"
+- name: Service Nodes | Wait for finish the configuration
   ansible.builtin.async_status:
     jid: "{{ __gateway_service_nodes_job_async_results_item.ansible_job_id }}"
   register: __gateway_service_nodes_job_async_result
@@ -39,5 +39,5 @@
   when: __gateway_service_nodes_job_async_results_item.ansible_job_id is defined
   no_log: "{{ gateway_configuration_service_nodes_secure_logging }}"
   vars:
-    ansible_async_dir: '{{ gateway_configuration_async_dir }}'
+    ansible_async_dir: "{{ gateway_configuration_async_dir }}"
 ...

@@ -10,10 +10,9 @@
 
 # a list of dictionaries describing the service clusters
 gateway_service_clusters: []
-
 gateway_configuration_service_clusters_secure_logging: "{{ gateway_configuration_secure_logging | default(false) }}"
 gateway_configuration_service_clusters_async_retries: "{{ gateway_configuration_async_retries | default(30) }}"
 gateway_configuration_service_clusters_async_delay: "{{ gateway_configuration_async_delay | default(1) }}"
-gateway_configuration_async_dir: null
+gateway_configuration_async_dir:
 gateway_configuration_service_clusters_enforce_defaults: "{{ gateway_configuration_enforce_defaults | default(false) }}"
 ...

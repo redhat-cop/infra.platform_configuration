@@ -10,7 +10,7 @@ rules:
   colons:
     max-spaces-before: 0
     max-spaces-after: -1
-  document-end: {present: true}
+  document-end: { present: true }
   indentation:
     level: error
     # Require indentation https://redhat-cop.github.io/automation-good-practices/#_yaml_and_jinja2_syntax
@@ -19,6 +19,16 @@ rules:
     level: error
     # Allow only YAML 1.2 booleans https://redhat-cop.github.io/automation-good-practices/#_yaml_and_jinja2_syntax
     allowed-values:
-      - 'true'
-      - 'false'
+      - "true"
+      - "false"
+  octal-values:
+    forbid-implicit-octal: true # yamllint defaults to false
+    forbid-explicit-octal: true # yamllint defaults to false
+  braces:
+    min-spaces-inside: 0 # yamllint defaults to 0
+    max-spaces-inside: 1 # yamllint defaults to 0
+  comments-indentation: false
+  comments:
+    # https://github.com/prettier/prettier/issues/6780
+    min-spaces-from-content: 1
 ...

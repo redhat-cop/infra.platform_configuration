@@ -13,8 +13,8 @@
     - name: Include vars from gateway_configs directory
       ansible.builtin.include_vars:
         dir: ./configs
-        extensions: ["yml"]
+        extensions: [yml]
 
   roles:
-    - {role: ../.., when: gateway_applications is defined}
+    - { role: ../.., when: gateway_applications is defined }
 ...

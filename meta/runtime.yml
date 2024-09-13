@@ -1,7 +1,6 @@
 ---
 requires_ansible: ">=2.16.0"
 
-
 # Collections must specify a minimum required ansible version to upload
 # to galaxy
 # requires_ansible: '>=2.9.10'
@@ -53,3 +52,4 @@ requires_ansible: ">=2.16.0"
 #   group_name:
 #     - module1
 #     - module2
+...
