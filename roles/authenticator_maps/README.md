@@ -32,7 +32,7 @@ Options for the `gateway_authenticator_maps` variable:
 | `new_authenticator` |       N/A       |    no    | str  | The name or ID referencing newly associated authenticator                                                                                   |
 | `revoke`            |     `false`     |    no    | bool | If a user does not meet this rule should we revoke the permission                                                                           |
 | `map_type`          |     `team`      |    no    | str  | What does the map work on, a team, a user flag or is this an allow rule. choices: ["allow", "is_superuser", "team", "organization", "role"] |
-| `role`              |       N/A       |    no    | str  | The name of RBAC Role Definition  to be used for this map                                                                                   | 
+| `role`              |       N/A       |    no    | str  | The name of RBAC Role Definition  to be used for this map                                                                                   |
 | `team`              |       N/A       |    no    | str  | A team name this rule works on                                                                                                              |
 | `organization`      |       N/A       |    no    | str  | An organization name this rule works on                                                                                                     |
 | `triggers`          |      `{}`       |    no    | dict | Trigger information for this rule                                                                                                           |
@@ -133,4 +133,4 @@ ansible-playbook manage_data.yml -e @data/gateway_authenticator_maps.yml
 
 ## License
 
-[GPLv3](https://github.com/ansible/aap-gateway/gateway_configuration_collection/COPYING)
+[GPLv3](https://github.com/redhat-cop/infra.platform_configuration/blob/main/COPYING)

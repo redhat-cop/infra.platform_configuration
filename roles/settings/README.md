@@ -4,7 +4,7 @@ An Ansible role to alter Settings on Ansible Automation gateway settings.
 
 ## Variables
 
-Detailed description of variables are provided in the [top-level README](../../README.md).  
+Detailed description of variables are provided in the [top-level README](../../README.md).
 Settings doesn't implement the `gateway_configuration_enforce_defaults` because it's not applicable.
 
 Variables specific for this role are following:
@@ -77,4 +77,4 @@ ansible-playbook manage_data.yml -e @data/gateway_settings.yml
 
 ## License
 
-[GPLv3](https://github.com/ansible/aap-gateway/gateway_configuration_collection/COPYING)
+[GPLv3](https://github.com/redhat-cop/infra.platform_configuration/blob/main/COPYING)

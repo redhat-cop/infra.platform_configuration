@@ -110,4 +110,4 @@ ansible-playbook manage_data.yml -e @data/gateway_routes.yml
 
 ## License
 
-[GPLv3](https://github.com/ansible/aap-gateway/gateway_configuration_collection/COPYING)
+[GPLv3](https://github.com/redhat-cop/infra.platform_configuration/blob/main/COPYING)

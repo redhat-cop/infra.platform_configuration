@@ -71,7 +71,7 @@ Options for the `gateway_authenticators` variable:
 
 - Deletes 1 authenticator
 - Creates an AzureAD authenticator with configuration provided by the `ansible_base.authentication.authenticator_plugins.azuread` module
-  - configuration class can be found in https://github.com/ansible/django-ansible-base/tree/devel/ansible_base/authentication/authenticator_plugins 
+  - configuration class can be found in https://github.com/ansible/django-ansible-base/tree/devel/ansible_base/authentication/authenticator_plugins
 
 File name: `data/gateway_authenticators.yml`
 
@@ -100,4 +100,4 @@ ansible-playbook manage_data.yml -e @data/gateway_authenticators.yml
 
 ## License
 
-[GPLv3](https://github.com/ansible/aap-gateway/gateway_configuration_collection/COPYING)
+[GPLv3](https://github.com/redhat-cop/infra.platform_configuration/blob/main/COPYING)

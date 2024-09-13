@@ -79,4 +79,4 @@ ansible-playbook manage_data.yml -e @data/gateway_role_user_assignments.yml
 
 ## License
 
-[GPLv3](https://github.com/ansible/aap-gateway/gateway_configuration_collection/COPYING)
+[GPLv3](https://github.com/redhat-cop/infra.platform_configuration/blob/main/COPYING)

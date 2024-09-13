@@ -29,7 +29,7 @@ Options for the `gateway_service_clusters` variable:
 | `name`         |      N/A      |        yes         | str  | The name of the resource                                                                |
 | `new_name`     |      N/A      |         no         | str  | Setting this option will change the existing name (looked up via the name field)        |
 | `service_type` |      N/A      | state is 'present' | str  | The type of service for this cluster. Choices : ["hub", "controller", "eda", "gateway"] |
-| `state`        |   `present`   |         no         | str  | [more](../../README.md#state-variable)                                                  | 
+| `state`        |   `present`   |         no         | str  | [more](../../README.md#state-variable)                                                  |
 
 **Unique value:**
 
@@ -91,4 +91,4 @@ ansible-playbook manage_data.yml -e @data/gateway_service_clusters.yml
 
 ## License
 
-[GPLv3](https://github.com/ansible/aap-gateway/gateway_configuration_collection/COPYING)
+[GPLv3](https://github.com/redhat-cop/infra.platform_configuration/blob/main/COPYING)
