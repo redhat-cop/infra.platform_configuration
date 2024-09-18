@@ -6,7 +6,7 @@
       tags: "{{ __role.tags }}"
   when: vars[__role.var] is defined
   tags: always
-  loop: "{{ gateway_configuration_dispatcher_roles }}"
+  loop: "{{ dispatch_roles }}"
   loop_control:
     loop_var: __role
 ...
