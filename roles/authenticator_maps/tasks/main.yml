@@ -1,6 +1,6 @@
 ---
 - name: "Authenticator Map | Configuration"  # noqa fqcn[action-core]
-  ansible.gateway_configuration.authenticator_map:
+  ansible.platform.authenticator_map:
     name: "{{ __gateway_authenticator_maps_item.name | mandatory }}"
     new_name: "{{ __gateway_authenticator_maps_item.new_name | default(omit) }}"
     authenticator: "{{ __gateway_authenticator_maps_item.authenticator | default(omit) }}"

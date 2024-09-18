@@ -1,7 +1,7 @@
 ---
 # tasks file for gateway_settings
 - name: Update automation platform gateway Settings
-  ansible.gateway_configuration.settings:
+  ansible.platform.settings:
     settings: "{{ settings_list | default(omit, true) }}"
 
     # Role Standard Options

@@ -1,6 +1,6 @@
 ---
 - name: "Routes | Configuration"  # noqa fqcn[action-core]
-  ansible.gateway_configuration.route:
+  ansible.platform.route:
     name: "{{ __gateway_routes_item.name | mandatory }}"
     new_name: "{{ __gateway_routes_item.new_name | default(omit) }}"
     description: "{{ __gateway_routes_item.description | default(omit) }}"

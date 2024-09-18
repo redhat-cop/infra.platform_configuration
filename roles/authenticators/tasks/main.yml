@@ -1,6 +1,6 @@
 ---
 - name: "Authenticators | Configuration"  # noqa fqcn[action-core]
-  ansible.gateway_configuration.authenticator:
+  ansible.platform.authenticator:
     name: "{{ __gateway_authenticators_item.name | mandatory }}"
     new_name: "{{ __gateway_authenticators_item.new_name | default(omit) }}"
     slug: "{{ __gateway_authenticators_item.slug | default(omit) }}"

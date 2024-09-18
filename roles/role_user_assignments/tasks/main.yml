@@ -1,6 +1,6 @@
 ---
 - name: "Role User Assignments | Configuration"  # noqa fqcn[action-core]
-  ansible.gateway_configuration.role_user_assignment:
+  ansible.platform.role_user_assignment:
     role_definition: "{{ __gateway_role_user_assignments_item.role_definition | mandatory }}"
     user: "{{ __gateway_role_user_assignments_item.user | default(omit) }}"
     user_ansible_id: "{{ __gateway_role_user_assignments_item.user_ansible_id | default(omit) }}"

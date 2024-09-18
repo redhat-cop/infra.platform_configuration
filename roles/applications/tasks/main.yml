@@ -1,7 +1,7 @@
 ---
 # Create gateway applications
 - name: "Managing gateway Applications"
-  ansible.gateway_configuration.application:
+  ansible.platform.application:
     name: "{{ __application_item.name | mandatory }}"
     new_name: "{{ __application_item.new_name | default(omit, true) }}"
     organization: "{{ __application_item.organization | mandatory }}"

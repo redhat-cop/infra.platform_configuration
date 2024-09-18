@@ -1,4 +1,4 @@
-# Ansible Role ansible.gateway_configuration.authenticators
+# Ansible Role infra.platform_configuration.authenticators
 
 ## Description
 

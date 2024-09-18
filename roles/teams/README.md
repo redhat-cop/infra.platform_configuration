@@ -1,4 +1,4 @@
-# Ansible Role ansible.gateway_configuration.teams
+# Ansible Role infra.platform_configuration.teams
 
 ## Description
 

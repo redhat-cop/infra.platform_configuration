@@ -1,6 +1,6 @@
 ---
 - name: "Service Keys | Configuration"  # noqa fqcn[action-core]
-  ansible.gateway_configuration.service_key:
+  ansible.platform.service_key:
     name: "{{ __gateway_service_keys_item.name | mandatory }}"
     new_name: "{{ __gateway_service_keys_item.new_name | default(omit) }}"
     is_active: "{{ __gateway_service_keys_item.is_active | default(omit) }}"

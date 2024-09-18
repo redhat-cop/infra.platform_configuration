@@ -1,4 +1,4 @@
-# Ansible Role ansible.gateway_configuration.routes
+# Ansible Role infra.platform_configuration.routes
 
 ## Description
 

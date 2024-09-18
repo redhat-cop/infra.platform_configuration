@@ -1,4 +1,4 @@
-# Ansible Role ansible.gateway_configuration.service_keys
+# Ansible Role infra.platform_configuration.service_keys
 
 ## Description
 
