@@ -15,7 +15,7 @@
     gateway_token: "{{ gateway_oauthtoken | default(omit, true) }}"
     gateway_request_timeout: "{{ gateway_request_timeout | default(omit, true) }}"
     gateway_validate_certs: "{{ gateway_validate_certs | default(omit) }}"
-  loop: "{{ http_ports_list if http_ports_list is defined else gateway_http_ports }}"
+  loop: "{{ http_ports if http_ports is defined else http_ports_list }}"
   loop_control:
     loop_var: __gateway_http_ports_item
   no_log: "{{ http_ports_secure_logging }}"

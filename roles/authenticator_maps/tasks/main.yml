@@ -21,7 +21,7 @@
     gateway_token: "{{ gateway_oauthtoken | default(omit, true) }}"
     gateway_request_timeout: "{{ gateway_request_timeout | default(omit, 10) }}"
     gateway_validate_certs: "{{ gateway_validate_certs | default(omit) }}"
-  loop: "{{ authenticator_maps_list if authenticator_maps_list is defined else gateway_authenticator_maps }}"
+  loop: "{{ authenticator_maps if authenticator_maps is defined else authenticator_maps_list }}"
   loop_control:
     loop_var: __gateway_authenticator_maps_item
   no_log: "{{ authenticator_maps_secure_logging }}"

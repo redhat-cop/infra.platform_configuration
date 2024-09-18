@@ -23,7 +23,7 @@
     gateway_token: "{{ gateway_oauthtoken | default(omit, true) }}"
     gateway_request_timeout: "{{ gateway_request_timeout | default(omit, true) }}"
     gateway_validate_certs: "{{ gateway_validate_certs | default(omit) }}"
-  loop: "{{ applications_list if applications_list is defined else gateway_applications }}"
+  loop: "{{ applications if applications is defined else applications_list }}"
   loop_control:
     loop_var: "__application_item"
   no_log: "{{ applications_secure_logging }}"

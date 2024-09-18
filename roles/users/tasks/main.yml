@@ -21,7 +21,7 @@
     gateway_token: "{{ gateway_oauthtoken | default(omit, true) }}"
     gateway_request_timeout: "{{ gateway_request_timeout | default(omit, true) }}"
     gateway_validate_certs: "{{ gateway_validate_certs | default(omit) }}"
-  loop: "{{ users_list if users_list is defined else user_accounts }}"
+  loop: "{{ users if users is defined else users_list }}"
   loop_control:
     loop_var: __gateway_user_accounts_item
   no_log: "{{ users_secure_logging }}"

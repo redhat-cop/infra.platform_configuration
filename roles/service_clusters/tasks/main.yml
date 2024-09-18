@@ -23,7 +23,7 @@
     gateway_token: "{{ gateway_oauthtoken | default(omit, true) }}"
     gateway_request_timeout: "{{ gateway_request_timeout | default(omit, 10) }}"
     gateway_validate_certs: "{{ gateway_validate_certs | default(omit) }}"
-  loop: "{{ service_clusters_list if service_clusters_list is defined else gateway_service_clusters }}"
+  loop: "{{ service_clusters if service_clusters is defined else service_clusters_list }}"
   loop_control:
     loop_var: __gateway_service_clusters_item
   no_log: "{{ service_clusters_secure_logging }}"

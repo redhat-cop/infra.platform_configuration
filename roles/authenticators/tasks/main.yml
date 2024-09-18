@@ -19,7 +19,7 @@
     gateway_token: "{{ gateway_oauthtoken | default(omit, true) }}"
     gateway_request_timeout: "{{ gateway_request_timeout | default(omit, 10) }}"
     gateway_validate_certs: "{{ gateway_validate_certs | default(omit) }}"
-  loop: "{{ authenticators_list if authenticators_list is defined else gateway_authenticators }}"
+  loop: "{{ authenticators if authenticators is defined else authenticators_list }}"
   loop_control:
     loop_var: __gateway_authenticators_item
   no_log: "{{ authenticators_secure_logging }}"

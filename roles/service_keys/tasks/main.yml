@@ -18,7 +18,7 @@
     gateway_token: "{{ gateway_oauthtoken | default(omit, true) }}"
     gateway_request_timeout: "{{ gateway_request_timeout | default(omit, 10) }}"
     gateway_validate_certs: "{{ gateway_validate_certs | default(omit) }}"
-  loop: "{{ service_keys_list if service_keys_list is defined else gateway_service_keys }}"
+  loop: "{{ service_keys if service_keys is defined else service_keys_list }}"
   loop_control:
     loop_var: __gateway_service_keys_item
   no_log: "{{ service_keys_secure_logging }}"

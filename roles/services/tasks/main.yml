@@ -22,7 +22,7 @@
     gateway_token: "{{ gateway_oauthtoken | default(omit, true) }}"
     gateway_request_timeout: "{{ gateway_request_timeout | default(omit, 10) }}"
     gateway_validate_certs: "{{ gateway_validate_certs | default(omit) }}"
-  loop: "{{ services_list if services_list is defined else gateway_services }}"
+  loop: "{{ services if services is defined else services_list }}"
   loop_control:
     loop_var: __gateway_services_item
   no_log: "{{ services_secure_logging }}"

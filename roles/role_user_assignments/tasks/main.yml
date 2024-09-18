@@ -15,7 +15,7 @@
     gateway_token: "{{ gateway_oauthtoken | default(omit, true) }}"
     gateway_request_timeout: "{{ gateway_request_timeout | default(omit, 10) }}"
     gateway_validate_certs: "{{ gateway_validate_certs | default(omit) }}"
-  loop: "{{ role_user_assignments_list if role_user_assignments_list is defined else gateway_role_user_assignments }}"
+  loop: "{{ role_user_assignments if role_user_assignments is defined else role_user_assignments_list }}"
   loop_control:
     loop_var: __gateway_role_user_assignments_item
   no_log: "{{ role_user_assignments_secure_logging }}"
