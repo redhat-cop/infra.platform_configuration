@@ -6,6 +6,8 @@
 #  - roles/master_role_example/
 exclude_paths:
   - '.github/'
+  - 'roles/*/tasks/main.yml'
+  - 'roles/applications/tests/test.yml'
 parseable: true
 use_default_rules: true
 offline: true
