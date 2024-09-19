@@ -3,7 +3,7 @@ argument_specs:
   main:
     short_description: An Ansible Role to create Applications on Ansible gateway.
     options:
-      applications:
+      applications_list:
         description: Data structure describing your applications
         type: list
         required: true
