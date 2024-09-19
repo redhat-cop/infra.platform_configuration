@@ -16,7 +16,7 @@
   loop: "{{ organizations if organizations is defined else organizations_list }}"
   loop_control:
     loop_var: __gateway_organizations_item
-  no_log: "{{ gateway_configuration_organizations_secure_logging }}"
+  no_log: "{{ organizations_secure_logging }}"
   async: 1000
   poll: 0
   register: __gateway_organizations_job_async
