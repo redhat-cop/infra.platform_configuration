@@ -2,10 +2,9 @@
 
 ![pre-commit tests](https://github.com/redhat-cop/infra.platform_configuration/actions/workflows/pre-commit.yml/badge.svg)
 ![Release](https://github.com/redhat-cop/infra.platform_configuration/actions/workflows/release.yml/badge.svg)
-<!-- markdownlint-disable-line MD033 MD034 --><a href="https://raw.githubusercontent.com/redhat-cop/controller_configuration/devel/docs/aap_config_as_code_public_meeting.ics"><img border="0" alt="Google Calendar invite" src="https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif"></a>
 <!-- Further CI badges go here as above -->
 
-This Ansible collection allows for easy interaction with an AWX or Ansible Controller server via Ansible roles using the AWX/Controller collection modules.
+This Ansible collection allows for easy interaction with Ansible Automation Platform via Ansible roles using the Ansible Automation Platform modules.
 
 ## Getting Help
 
@@ -21,11 +20,11 @@ The ansible.platform collections MUST be installed in order for this collection 
 
 ```yaml
 ---
-- name: Playbook to configure ansible controller post installation
+- name: Playbook to configure ansible platform post installation
   hosts: localhost
   connection: local
   vars:
-    controller_validate_certs: true
+    gateway_validate_certs: true
   collections:
     - ansible.platform
 ```
@@ -88,55 +87,37 @@ ansible-playbook infra.platform_configuration.configure_platform.yml
 Otherwise it will look for the modules only in your base installation. If there are errors complaining about "couldn't resolve module/action" this is the most likely cause.
 
 ```yaml
-- name: Playbook to configure ansible controller post installation
+- name: Playbook to configure ansible platform post installation
   hosts: localhost
   connection: local
   vars:
-    controller_validate_certs: true
+    gateway_validate_certs: true
   collections:
     - ansible.platform
 ```
 
-Define following vars here, or in `controller_configs/controller_auth.yml`
-`controller_hostname: ansible-controller-web-svc-test-project.example.com`
+Define following vars here, or in `platform_configs/platform_auth.yml`
+`gateway_hostname: ansible-platform-web-svc-test-project.example.com`
 
 You can also specify authentication by a combination of either:
 
-- `controller_hostname`, `controller_username`, `controller_password`
-- `controller_hostname`, `controller_oauthtoken`
+- `gateway_hostname`, `gateway_username`, `gateway_password`
+- `gateway_hostname`, `gateway_oauthtoken`
 
-The OAuth2 token is the preferred method. You can obtain the token through the preferred `controller_token` module, or through the
-AWX CLI [login](https://docs.ansible.com/automation-controller/latest/html/controllerapi/authentication.html)
-command.
+The OAuth2 token is the preferred method. You can obtain the token through the preferred `ansible.platform.token` module, or by creating one
+via the AAP browser interface.
 
-These can be specified via (from highest to lowest precedence):
-
-- direct role variables as mentioned above
-- environment variables (most useful when running against localhost)
-- a config file path specified by the `controller_config_file` parameter
-- a config file at `~/.controller_cli.cfg`
-- a config file at `/etc/controller/controller_cli.cfg`
-
-Config file syntax looks like this:
-
-```ini
-[general]
-host = https://localhost:8043
-verify_ssl = true
-oauth_token = LEdCpKVKc4znzffcpQL5vLG8oyeku6
-```
-
-Controller token module would be invoked with this code:
+Gateway token module would be invoked with this code:
 
 ```yaml
-    - name: Create a new token using controller username/password
-      awx.awx.token:
-        description: 'Creating token to test controller jobs'
+    - name: Create a new token using platform username/password
+      ansible.platform.token:
+        description: 'Creating token to test platform jobs'
         scope: "write"
         state: present
-        controller_host: "{{ controller_hostname }}"
-        controller_username: "{{ controller_username }}"
-        controller_password: "{{ controller_password }}"
+        gateway_host: "{{ gateway_hostname }}"
+        gateway_username: "{{ gateway_username }}"
+        gateway_password: "{{ gateway_password }}"
 
 ```
 
@@ -164,11 +145,6 @@ Adding the ability to use direct output from the awx export command in the roles
 
 We welcome community contributions to this collection. If you find problems, please open an issue or create a PR against the [infra.platform_configuration collection repository](https://github.com/redhat-cop/infra.platform_configuration).
 More information about contributing can be found in our [Contribution Guidelines.](https://github.com/redhat-cop/infra.platform_configuration/blob/devel/.github/CONTRIBUTING.md)
-
-We have a community meeting every 4 weeks. Find the agenda in the [issues](https://github.com/redhat-cop/controller_configuration/issues) and the calendar invitation below:
-
-<!-- markdownlint-disable-next-line MD033 MD034 -->
-<a target="_blank" href="https://raw.githubusercontent.com/redhat-cop/controller_configuration/devel/docs/aap_config_as_code_public_meeting.ics"><img border="0" alt="Google Calendar invite" src="https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif"></a>
 
 ## Code of Conduct
 
