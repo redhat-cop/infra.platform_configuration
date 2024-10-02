@@ -137,10 +137,6 @@ We plan to regularly release new minor or bugfix versions once new features or b
 
 Releasing the current major version happens from the `main` branch.
 
-## Roadmap
-
-Adding the ability to use direct output from the awx export command in the roles along with the current data model.
-
 ## Contributing to this collection
 
 We welcome community contributions to this collection. If you find problems, please open an issue or create a PR against the [infra.platform_configuration collection repository](https://github.com/redhat-cop/infra.platform_configuration).
