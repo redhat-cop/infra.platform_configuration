@@ -5,8 +5,9 @@
 # exclude_paths:
 #  - roles/master_role_example/
 exclude_paths:
-  - '.github/'
-  - 'roles/applications/tests/test.yml'
+  - .github/
+  - roles/applications/tests/test.yml
+  - changelogs/
 parseable: true
 use_default_rules: true
 offline: true
@@ -25,7 +26,6 @@ mock_modules:
   - ansible.platform.role_user_assignment
   - ansible.platform.application
   - ansible.platform.organization
-  - ansible.platform.route
   - ansible.platform.service
   - ansible.platform.authenticator_map
   - ansible.platform.service_node
